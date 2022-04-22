@@ -33,13 +33,21 @@ class KegControl extends React.Component {
     }
   }
 
-    handleAddingNewKeg = (newKeg) => {
-      const {mainKegList} = this.state;
-      // const {setState} = this;
+  handleAddingNewKeg = (newKeg) => {
+    const {mainKegList} = this.state;
+    // const {setState} = this;
 
-      const newKegList = mainKegList.concat(newKeg);
-      this.setState({ mainKegList: newKegList});
-    }
+    const newKegList = mainKegList.concat(newKeg);
+    this.setState({ mainKegList: newKegList});
+  }
+
+  handleChangingSelectedKeg = (id) => {
+    const {mainKegList} = this.state;
+
+    const chosenKeg = mainKegList.filter(keg => keg.id === id)[0];
+    this.setState({selectedKeg: chosenKeg});
+  }
+
 
   render() {
     const {currentProductVisible, selectedKeg, mainKegList} = this.state;
@@ -49,10 +57,10 @@ class KegControl extends React.Component {
 
     if (currentProductVisible === true){
         if (selectedKeg === null) {
-          currentlyVisibleState = <KegList kegList={mainKegList}/>;
+          currentlyVisibleState = <KegList onChangingSelectedKeg={this.handleChangingSelectedKeg} kegList={mainKegList}/>;
           buttonText = "Add Keg";
         } else {
-          currentlyVisibleState = <KegDetail />;
+          currentlyVisibleState = <KegDetail keg = {selectedKeg}/>;
           buttonText = "Return To Keg List";
         }
 

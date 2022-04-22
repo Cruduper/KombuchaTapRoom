@@ -1,5 +1,6 @@
 import React from "react";
 import Keg from './Keg';
+import PropTypes from "prop-types";
 
 
   // name: PropTypes.string.isRequired,
@@ -12,7 +13,7 @@ function KegList(props){
   return (
     <>
       {props.kegList.map((keg) =>
-         <Keg //onKegSelection = { props.onKegSelection }
+         <Keg onChangingSelectedKeg = { props.onChangingSelectedKeg }
           name={keg.name}
           brand={keg.brand}
           price={keg.price}
@@ -23,6 +24,11 @@ function KegList(props){
       )}
     </>
   );
+}
+
+KegList.propTypes = {
+  onChangingSelectedKeg: PropTypes.func,
+  kegList: PropTypes.array
 }
 
 export default KegList;
