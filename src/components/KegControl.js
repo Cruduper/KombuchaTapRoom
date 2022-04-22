@@ -1,6 +1,7 @@
 import React from 'react';
 import KegList from './KegList';
 import KegDetail from './KegDetail';
+import NewKegForm from './NewKegForm';
 
 
 class KegControl extends React.Component {
@@ -16,16 +17,16 @@ class KegControl extends React.Component {
 
   handleClick = () => {
     const {currentProductVisible, selectedKeg} = this.state;
-    const {setState} = this;
+    // const {setState} = this;
     if (currentProductVisible === true){
       if (selectedKeg === null) {
-        setState({currentProductVisible: false});
+        this.setState({currentProductVisible: false});
       } else {
-        setState({selectedKeg: null});
+        this.setState({selectedKeg: null});
       }
 
     } else {
-      setState({ 
+      this.setState({ 
         currentProductVisible: true,
         selectedKeg: null 
       });
@@ -34,10 +35,10 @@ class KegControl extends React.Component {
 
     handleAddingNewKeg = (newKeg) => {
       const {mainKegList} = this.state;
-      const {setState} = this;
+      // const {setState} = this;
 
       const newKegList = mainKegList.concat(newKeg);
-      setState({ mainKegList: newKegList});
+      this.setState({ mainKegList: newKegList});
     }
 
   render() {
@@ -56,7 +57,7 @@ class KegControl extends React.Component {
         }
 
       } else {
-        currentlyVisibleState = <newKegForm onAddingNewKeg={ handleAddingNewKeg}/>;
+        currentlyVisibleState = <NewKegForm onAddingNewKeg={ handleAddingNewKeg}/>;
         buttonText = "Return To Keg List";
       }
 

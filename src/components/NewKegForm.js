@@ -15,13 +15,17 @@ function NewKegForm(props){
     props.onAddingNewKeg({
       name: event.target.name.value, 
       brand: event.target.brand.value, 
-      price: event.target.price.value, 
-      alcPercent: event.target.alcPercent.value, 
+      price: parseInt(event.target.price.value), 
+      alcPercent: parseInt(event.target.alcPercent.value), 
       pintsLeft: 124, 
-      id: v4()});
-    console.log(event.target.names.value);
-    console.log(event.target.location.value);
-    console.log(event.target.issue.value);
+      id: v4()
+    });
+    // console.log(event.target.names.value);
+    // console.log(event.target.brand.value);
+    // console.log(event.target.price.value);
+    // console.log(event.target.alcPercent.value);
+    // console.log(event.target.pintsLeft.value);
+    // console.log(event.target.id.value);
   }
 
   return (
@@ -43,15 +47,12 @@ function NewKegForm(props){
           type='text'
           name='alcPercent'
           placeholder='% alcohol' />
-        <textarea
-          name='issue'
-          placeholder='Describe your issue.' />
-        <button type='submit'>Help!</button>
+        <button type='submit'>Add New Kombucha!</button>
       </form>
     </React.Fragment>
   );
 }
 
-NewTicketForm.propTypes = { onAddingNewKeg: PropTypes.func };
+NewKegForm.propTypes = { onAddingNewKeg: PropTypes.func };
 
-export default NewTicketForm;
+export default NewKegForm;

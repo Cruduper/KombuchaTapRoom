@@ -1,12 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Keg(props){
   return (
     <>
       <div>
-        <h3>{props.name}</h3>
+        <h3>Name: {props.name}</h3>
         <p>Brand: {props.brand}</p>
-        <p>Price{props.price}</p>
+        <p>Price: {props.price}</p>
         <p>Alcohol % (abv): {props.alcPercent}</p>
         <hr/>
       </div>
@@ -14,7 +15,7 @@ function Keg(props){
   );
 }
 
-Ticket.propTypes = {
+Keg.propTypes = {
   name: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
