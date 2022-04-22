@@ -58,17 +58,33 @@ class KegControl extends React.Component {
   }
 
   handleDecrementingPints = (id) => {
-    const {mainKegList} = this.state;
+    const {mainKegList, selectedKeg} = this.state;
 
-    const chosenKeg = mainKegList.filter(keg => keg.id === id)[0];
-    let newPintNum = chosenKeg.pintsLeft - 1;
-    this.setState(prevState => ({
-      selectedKeg: {
-        ...prevState.selectedKeg,
-        pintsLeft: newPintNum
-      }
+    // const chosenKeg = mainKegList.filter(keg => keg.id === id)[0];
+    // let newPintNum = chosenKeg.pintsLeft - 1;
+
+
+    // this.setState(prevState => ({
+    //   selectedKeg: {
+    //     ...prevState.selectedKeg,
+    //     pintsLeft: newPintNum
+    //   }
+    // }))
+
+    this.setState( (prevState, props) => ({
+
+      mainKegList: prevState.mainKegList.map(elem => elem.id === id ? { ...elem, pintsLeft: elem.pintsLeft - 1 }: elem )
     }))
+
+    // this.setState(prevState => ({
+    //   selectedKeg: {
+    //     ...prevState.selectedKeg
+    //   }
+    // }))
+
   }
+
+
 
 
   render() {
