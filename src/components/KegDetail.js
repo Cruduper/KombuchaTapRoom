@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 
 function KegDetail(props){
-const { keg, onDeletingKeg } = props;
+const { keg, onDeletingKeg, onDecrementingPints } = props;
 
   return (
     <React.Fragment>
@@ -13,6 +13,7 @@ const { keg, onDeletingKeg } = props;
       <p>Alcohol % (abv): {keg.alcPercent}</p>
       <p>Pints Left: {keg.pintsLeft}</p>
       <button onClick={()=> onDeletingKeg(keg.id) }>Delete Keg</button>
+      <button onClick={()=> onDecrementingPints(keg.id) }>Pour A Pint</button>
       <hr/>
     </React.Fragment>
   );
@@ -20,7 +21,8 @@ const { keg, onDeletingKeg } = props;
 
 KegDetail.propTypes = {
   keg: PropTypes.object,
-  onDeletingKeg: PropTypes.func
+  onDeletingKeg: PropTypes.func, 
+  onDecrementingPints: PropTypes.func
 };
 
 export default KegDetail;
