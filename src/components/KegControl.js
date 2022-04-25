@@ -11,13 +11,13 @@ class KegControl extends React.Component {
     this.state = {
       currentProductVisible: true,
       selectedKeg: null,
-      mainKegList: []
+      mainKegList: [],
     };
   }
 
   handleClick = () => {
     const {currentProductVisible, selectedKeg} = this.state;
-    // const {setState} = this;
+
     if (currentProductVisible === true){
       if (selectedKeg === null) {
         this.setState({currentProductVisible: false});
@@ -35,17 +35,14 @@ class KegControl extends React.Component {
 
   handleAddingNewKeg = (newKeg) => {
     const {mainKegList} = this.state;
-    // const {setState} = this;
 
     const newKegList = mainKegList.concat(newKeg);
     this.setState({ mainKegList: newKegList});
   }
 
   handleChangingSelectedKeg = (id) => {
-    const {mainKegList} = this.state;
 
-    const chosenKeg = mainKegList.filter(keg => keg.id === id)[0];
-    this.setState({selectedKeg: chosenKeg});
+    this.setState(prevState => ({selectedKeg: prevState.mainKegList.find(e => e.id === id)}));
   }
 
   handleDeletingKeg = (id) => {
@@ -58,34 +55,15 @@ class KegControl extends React.Component {
   }
 
   handleDecrementingPints = (id) => {
-    const {mainKegList, selectedKeg} = this.state;
+    //const {mainKegList, selectedKeg} = this.state;
 
-    // const chosenKeg = mainKegList.filter(keg => keg.id === id)[0];
-    // let newPintNum = chosenKeg.pintsLeft - 1;
-
-
-    // this.setState(prevState => ({
-    //   selectedKeg: {
-    //     ...prevState.selectedKeg,
-    //     pintsLeft: newPintNum
-    //   }
-    // }))
-
-    this.setState( (prevState, props) => ({
+    this.setState( (prevState) => ({
 
       mainKegList: prevState.mainKegList.map(elem => elem.id === id ? { ...elem, pintsLeft: elem.pintsLeft - 1 }: elem )
     }))
 
-    // this.setState(prevState => ({
-    //   selectedKeg: {
-    //     ...prevState.selectedKeg
-    //   }
-    // }))
-
+    this.handleChangingSelectedKeg(id);
   }
-
-
-
 
   render() {
     const {currentProductVisible, selectedKeg, mainKegList} = this.state;
@@ -106,7 +84,6 @@ class KegControl extends React.Component {
         currentlyVisibleState = <NewKegForm onAddingNewKeg={ handleAddingNewKeg}/>;
         buttonText = "Return To Keg List";
       }
-
 
     return (
       
