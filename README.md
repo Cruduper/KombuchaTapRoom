@@ -18,7 +18,7 @@ The beginning project in React for my coding bootcamp. An exploration of React c
 
 
 ## Component Hierarchy
-![component tree](https://github.com/Cruduper/KombuchaTapRoom/blob/main/src/img/component?raw=true)
+![component tree](https://github.com/Cruduper/KombuchaTapRoom/blob/main/src/img/components.jpg?raw=true)
 
 
 ## Setup/Installation Requirements
