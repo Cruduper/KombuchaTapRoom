@@ -1,12 +1,47 @@
-# Getting Started with Create React App
+# Kombucha Tap Room
+#### Kombucha lovers rejoice, the answer to your prayers has arrived, maybe!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### By Eric Crudup
+
+## Technologies
+
+* _React_
+* _Create React App_
+* _HTML_
+* _CSS_
+* _NPM_
+
+
+## Description
+
+The beginning project in React for my coding bootcamp. An exploration of React components and passing shared state. 
+
 
 ## Component Hierarchy
-https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true
-![component tree](https://github.com/Cruduper/KombuchaTapRoom/blob/main/src/img/components.jpg?raw=true)
+![component tree](https://github.com/Cruduper/KombuchaTapRoom/blob/main/src/img/component?raw=true)
 
 
+## Setup/Installation Requirements
+
+* _clone git repository to a local machine_
+* _navigate to root folder of the project using command line_
+* _use the '$ npm install' command to install necessary packages_
+* _type in '$ npm run build' to build project_
+* _type in '$ npm run start' command to open project in browser and start live server_
+
+## Known Bugs
+
+* _No known bugs_
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)    
+If you have any issues or questions, contact me at briefcasemanx@gmail.com    
+
+Copyright (c) _2022_  _Eric Crudup_
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
 ## Available Scripts
