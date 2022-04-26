@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Component Hierarchy
 https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true
-![component tree](https://github.com/cruduper/KombuchaTapRoom/blob/main/components.jpg?raw=true)
+![component tree](https://github.com/Cruduper/KombuchaTapRoom/blob/main/src/img/components.jpg?raw=true)
 
 
 
