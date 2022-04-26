@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Component Hierarchy
+
+![component tree](https://github.com/cruduper/KombuchaTapRoom/blob/main/componenthierarchy.png?raw=true)
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
