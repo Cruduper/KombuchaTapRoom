@@ -3,8 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Component Hierarchy
-
-![component tree](https://github.com/cruduper/KombuchaTapRoom/blob/main/componenthierarchy.png?raw=true)
+https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true
+![component tree](https://github.com/cruduper/KombuchaTapRoom/blob/main/components.jpg?raw=true)
 
 
 
