@@ -17,15 +17,10 @@ function NewKegForm(props){
       brand: event.target.brand.value, 
       price: parseInt(event.target.price.value), 
       alcPercent: parseInt(event.target.alcPercent.value), 
-      pintsLeft: 124, 
+      pintsLeft: 4, 
       id: v4()
     });
-    // console.log(event.target.names.value);
-    // console.log(event.target.brand.value);
-    // console.log(event.target.price.value);
-    // console.log(event.target.alcPercent.value);
-    // console.log(event.target.pintsLeft.value);
-    // console.log(event.target.id.value);
+    props.handleClick();
   }
 
   return (
@@ -47,12 +42,15 @@ function NewKegForm(props){
           type='text'
           name='alcPercent'
           placeholder='% alcohol' />
-        <button type='submit'>Add New Kombucha!</button>
+        <button type='submit' >Add New Kombucha!</button>
       </form>
     </React.Fragment>
   );
 }
 
-NewKegForm.propTypes = { onAddingNewKeg: PropTypes.func };
+NewKegForm.propTypes = { 
+  onAddingNewKeg: PropTypes.func, 
+  handleClick: PropTypes.func
+  };
 
 export default NewKegForm;
