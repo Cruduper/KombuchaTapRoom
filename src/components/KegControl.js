@@ -59,7 +59,7 @@ class KegControl extends React.Component {
 
     this.setState( (prevState) => ({
 
-      mainKegList: prevState.mainKegList.map(elem => elem.id === id ? { ...elem, pintsLeft: elem.pintsLeft - 1 }: elem )
+      mainKegList: prevState.mainKegList.map(elem => elem.id === id && elem.pintsLeft > 0 ? { ...elem, pintsLeft: elem.pintsLeft - 1 }: elem )
     }))
 
     this.handleChangingSelectedKeg(id);
@@ -81,7 +81,7 @@ class KegControl extends React.Component {
         }
 
       } else {
-        currentlyVisibleState = <NewKegForm onAddingNewKeg={ handleAddingNewKeg}/>;
+        currentlyVisibleState = <NewKegForm onAddingNewKeg={handleAddingNewKeg} handleClick={handleClick}/>;
         buttonText = "Return To Keg List";
       }
 
